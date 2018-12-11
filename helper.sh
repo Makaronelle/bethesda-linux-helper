@@ -8,7 +8,7 @@
 
 LOOP_TIME=2 # How much do we wait in the loop before checking the files (in seconds)
 EXE_NAME="BethesdaNetLauncher.exe" # Current now of Bethesda Launcher executable
-TIMEOUT=60 # How much do we wait until we just think Bethesda won't launch at all ?
+TIMEOUT=120 # How much do we wait until we just think Bethesda won't launch at all ?
 FILE="cdpprod.dch" # The infamous file we need to rename
 
 launched=false # This script was launched, but is Bethesda Launcher launched ?
