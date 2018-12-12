@@ -10,6 +10,8 @@ LOOP_TIME=2 # How much do we wait in the loop before checking the files (in seco
 EXE_NAME="BethesdaNetLauncher.exe" # Current now of Bethesda Launcher executable
 TIMEOUT=120 # How much do we wait until we just think Bethesda won't launch at all ?
 FILE="cdpprod.dch" # The infamous file we need to rename
+PREVENT_PANICK_TIME=10 # Seems like the launcher doesn't like us to touch that many time to the file ? Not 100% sure it's
+# the crash cause but it may help
 
 launched=false # This script was launched, but is Bethesda Launcher launched ?
 running=true # We will run until Bethesda Launcher stops running, or didn't run at all
@@ -45,6 +47,7 @@ while [[ $running == true ]]; do
             rm $FILE
             mv "${FILE}.tmp" $FILE
             echo "Renamed $FILE"
+            sleep $PREVENT_PANICK_TIME
          fi
          sleep $LOOP_TIME
       else
